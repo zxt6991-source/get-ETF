@@ -1,0 +1,6 @@
+﻿code,name,track_index,selection_rule,scale_yi,avg_amount_yi,constituents,weight_cap_pct,rebalance,top10_pct,top1_pct,sector_top1_name,sector_top1_pct,sector_top2_name,sector_top2_pct,ret_1y_pct,ret_3y_ann_pct,ret_5y_ann_pct,max_dd_pct,vol_ann_pct,info_ratio,pe_pctile,pb_pctile,earnings_growth_pct,dividend_yield_pct,fee_pct,launch_date,as_of,source
+,消费80指数,消费80指数,沪市主要消费/可选消费/医药卫生类公司股票,,,,,半年度,49.96,,医药生物,32.35,食品饮料,31.72,,,,,,,,,,,,,,方法论文档示例数据（仅演示口径）
+,800消费指数,800消费指数,仅覆盖中证一级行业中的必选消费公司，采用抽样复制,,,,,,,,食品饮料,72.49,农林牧渔,22.67,,,,,,,,,,,,,,方法论文档示例数据（仅演示口径）
+,上证消费指数,上证消费指数,从上证180中选取市值最大的30家消费公司,,,30,15,半年度,75.78,15.7,食品饮料,87.45,医药生物,4.1,,,,,,,,,,,,,,方法论文档示例数据（仅演示口径）
+,CS消费50指数,CS消费50指数,可选消费与主要消费行业中按总市值/营收/ROE/毛利率精选50家,,,50,,半年度,,15.31,家用电器,33.59,食品饮料,20.0,,,,,,,,,,,,,,方法论文档示例数据（仅演示口径）
+DEMO01,【示例】小规模消费ETF,上证消费指数,与上证消费指数相同，但规模不足,0.6,0.03,,,,,,,,,,,,,,,,,,,,,,,演示用构造数据（仅测试淘汰逻辑）
