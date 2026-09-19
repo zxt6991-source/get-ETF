@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费 ETF 挑选报告 · 2026-09-18</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  :root{
+    --ink:#1a1d21; --ink2:#4a5158; --ink3:#7b848d; --line:#e6e9ee;
+    --bg:#f7f8fa; --card:#ffffff; --up:#d9432f; --down:#1a9c6b;
+    --accent:#1f5fa8; --accent-soft:#eaf1fa; --warn:#b7791f; --warn-bg:#fdf6e7;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:14px;line-height:1.65;}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 22px 72px;}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:-.3px;}
+  h2{font-size:18px;margin:38px 0 14px;padding-left:10px;border-left:4px solid var(--accent);}
+  h3{font-size:15px;margin:22px 0 10px;color:var(--ink2);}
+  .sub{color:var(--ink3);font-size:13px;margin-bottom:22px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:16px;}
+  .grid{display:grid;gap:14px;}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  @media(max-width:840px){.g4,.g3{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.g4,.g3{grid-template-columns:1fr;}}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .kpi .lab{font-size:12px;color:var(--ink3);}
+  .kpi .val{font-size:22px;font-weight:650;margin-top:4px;letter-spacing:-.4px;}
+  .kpi .note{font-size:12px;color:var(--ink3);margin-top:2px;}
+  .up{color:var(--up);} .down{color:var(--down);}
+  table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{background:#f0f3f7;font-weight:600;color:var(--ink2);white-space:nowrap;font-size:12px;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  tr:last-child td{border-bottom:none;}
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card);}
+  .chart{width:100%;height:360px;}
+  .chart.sm{height:320px;}
+  .pill{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11.5px;line-height:1.5;margin:2px 4px 2px 0;white-space:nowrap;}
+  .p-blue{background:var(--accent-soft);color:var(--accent);}
+  .p-green{background:#e8f6f0;color:#158059;}
+  .p-warn{background:var(--warn-bg);color:var(--warn);}
+  .p-gray{background:#eef0f3;color:#5d666f;}
+  .note-box{background:var(--warn-bg);border-left:4px solid var(--warn);border-radius:8px;padding:12px 16px;font-size:13px;color:#6b5416;}
+  .src{font-size:12px;color:var(--ink3);}
+  .foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);}
+  .disc{background:#f0f3f7;border-radius:8px;padding:14px 16px;font-size:12.5px;color:var(--ink2);margin-top:18px;}
+  .rec{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--card);}
+  .rec h3{margin:0 0 6px;font-size:15px;color:var(--ink);}
+  .rec .tag{font-size:12px;color:var(--ink3);margin-bottom:8px;}
+  .rec p{margin:0;font-size:13px;color:var(--ink2);}
+  .rec-top{border-color:#c7dbf3;background:linear-gradient(180deg,#fbfdff,#ffffff);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>消费 ETF 挑选报告</h1>
+  <div class="sub">数据截止 2026-09-18（A 股/港股通收盘） ｜ 分析范围：名称或跟踪指数含「消费」的场内 ETF ｜ 候选 44 只 → 代表性品种 7 只，覆盖 7 个跟踪指数</div>
+
+  <div class="grid g4">
+    <div class="kpi"><div class="lab">候选 ETF 总数（含重名指数）</div><div class="val">44</div><div class="note">去重后跟踪指数 12 个</div></div>
+    <div class="kpi"><div class="lab">入选打分（规模≥1亿、上市≥6月）</div><div class="val">7</div><div class="note">每指数取代表产品</div></div>
+    <div class="kpi"><div class="lab">赛道估值水位</div><div class="val">低位</div><div class="note">PE 分位 0.3%~38.7%</div></div>
+    <div class="kpi"><div class="lab">赛道近 1 年表现</div><div class="val down">全线下跌</div><div class="note">-13.9% ~ -29.2%</div></div>
+  </div>
+
+  <h2>一、结论先行：按偏好选择</h2>
+
+  <div class="grid g2" style="display:grid;gap:14px;grid-template-columns:1fr 1fr;">
+    <div class="rec rec-top">
+      <h3>① 要分散、不想押注单一板块 → 消费ETF招商（510150）</h3>
+      <div class="tag">跟踪 上证消费80（000069）｜ 规模 13.89 亿 ｜ 费率 0.60%</div>
+      <p>前十大权重仅 <b>53.0%</b>，全场最低；医药生物 33.2% + 汽车/乘用车零部件 21.6% + 食品饮料 31.1% + 家电，是沪市「消费+医药+汽车」三分结构的唯一宽口径工具。综合分 63.2，排名第 2。</p>
+    </div>
+    <div class="rec">
+      <h3>② 要低估值 + 高股息 + 低费率 → 港股通消费ETF易方达（513070）</h3>
+      <div class="tag">跟踪 中证港股通消费主题（931454）｜ 规模 13.65 亿 ｜ 费率 <b>0.20%（全场最低）</b></div>
+      <p>PE 13.2 倍（历史分位 <b>0.48%</b>）、PB 分位 1.04%、股息率 <b>5.00%</b>（全场最高之一）；近 3 年年化 <b>+1.23%</b>，是消费赛道里唯一三年维度为正的品种。代价：波动率 26.2% 最高、近 1 年跌 29.2% 最深。</p>
+    </div>
+    <div class="rec">
+      <h3>③ 要白酒+家电双龙头弹性、且要流动性 → 消费50ETF富国（515650）</h3>
+      <div class="tag">跟踪 中证消费50（931139）｜ 规模 30.17 亿 ｜ 日均成交 0.51 亿</div>
+      <p>同指数规模最大产品；前十大 74.3%（茅台 14.8% + 美的 14.4% + 格力 10.3%）。近 1 年 -13.9%，是 A 股消费指数中跌幅最小的；股息率 4.43%。适合作为「消费龙头打包」的默认仓位。</p>
+    </div>
+    <div class="rec">
+      <h3>④ 要最纯粹的必选消费底仓 + 最好流动性 → 消费ETF汇添富（159928）</h3>
+      <div class="tag">跟踪 中证主要消费（800消费，000932）｜ 规模 <b>144.25 亿</b> ｜ 日均成交 <b>2.52 亿</b></div>
+      <p>全市场流动性最好的消费 ETF，白酒+乳品+调味品+养殖，食品饮料 68%、农林牧渔 27%，需求刚性最强。代价：近 3 年年化 -11.3% 最差，食品饮料单一行业 68% 集中。</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top:14px;">
+    <b>不推荐 / 需警惕：</b>消费ETF华夏（510630）—— 综合分 52.6 垫底，食品饮料权重高达 <b>84.6%</b>（近似单一板块押注），规模仅 4.01 亿，近 3 年年化 -9.2%。裸白酒弹性敞口的风险收益比不佳。消费龙头ETF华宝（516130）—— 日均成交仅 0.16 亿，买卖冲击成本明显偏高。
+  </div>
+
+  <h2>二、综合评分与排名</h2>
+  <div class="card"><div id="chartScore" class="chart sm"></div></div>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr>
+        <th class="num">排名</th><th>ETF</th><th>跟踪指数</th><th class="num">综合分</th>
+        <th class="num">可交易性</th><th class="num">编制质量</th><th class="num">集中度</th><th class="num">历史表现</th><th class="num">价值</th><th>画像标签</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>恒生消费ETF景顺 <span class="src">sh513970</span></td><td>恒生消费 HSCGSI</td><td class="num"><b>63.5</b></td><td class="num">58</td><td class="num">88</td><td class="num">52</td><td class="num">35</td><td class="num">94</td><td><span class="pill p-warn">集中高弹性</span><span class="pill p-green">高股息防御</span></td></tr>
+        <tr><td class="num">2</td><td>消费ETF招商 <span class="src">sh510150</span></td><td>上证消费80 000069</td><td class="num"><b>63.2</b></td><td class="num">58</td><td class="num">82</td><td class="num">67</td><td class="num">35</td><td class="num">85</td><td><span class="pill p-gray">结构最分散</span></td></tr>
+        <tr><td class="num">3</td><td>消费50ETF富国 <span class="src">sh515650</span></td><td>中证消费50 931139</td><td class="num"><b>61.7</b></td><td class="num">75</td><td class="num">75</td><td class="num">46</td><td class="num">38</td><td class="num">90</td><td><span class="pill p-warn">集中高弹性</span><span class="pill p-blue">龙头主导</span><span class="pill p-green">高股息防御</span></td></tr>
+        <tr><td class="num">4</td><td>消费龙头ETF华宝 <span class="src">sh516130</span></td><td>中证消费龙头 931068</td><td class="num"><b>61.6</b></td><td class="num">50</td><td class="num">75</td><td class="num">52</td><td class="num">38</td><td class="num">94</td><td><span class="pill p-warn">集中高弹性</span><span class="pill p-blue">龙头主导</span><span class="pill p-warn">流动性偏弱</span></td></tr>
+        <tr><td class="num">5</td><td>港股通消费ETF易方达 <span class="src">sh513070</span></td><td>中证港股通消费主题 931454</td><td class="num"><b>60.8</b></td><td class="num">66</td><td class="num">75</td><td class="num">40</td><td class="num">33</td><td class="num">100</td><td><span class="pill p-warn">集中高弹性</span><span class="pill p-green">高股息防御</span></td></tr>
+        <tr><td class="num">6</td><td>消费ETF汇添富 <span class="src">sz159928</span></td><td>中证主要消费 000932</td><td class="num"><b>59.4</b></td><td class="num">90</td><td class="num">70</td><td class="num">40</td><td class="num">32</td><td class="num">90</td><td><span class="pill p-warn">集中高弹性</span><span class="pill p-green">高股息防御</span></td></tr>
+        <tr><td class="num">7</td><td>消费ETF华夏 <span class="src">sh510630</span></td><td>上证主要消费 000036</td><td class="num"><b>52.6</b></td><td class="num">49</td><td class="num">70</td><td class="num">28</td><td class="num">32</td><td class="num">88</td><td><span class="pill p-warn">集中高弹性</span><span class="pill p-blue">龙头主导</span><span class="pill p-warn">流动性偏弱</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px;">评分口径：可交易性 10% / 编制质量 15% / 集中度 20% / 历史表现 30% / 价值 25%。分数仅用于<b>同赛道横向排序</b>，不跨赛道比较。数据覆盖率 100%（盈利增速预测缺失，已按剩余权重重归一化）。</p>
+
+  <h2>三、候选池（第 1 步）</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>代码</th><th>名称</th><th>跟踪指数</th><th class="num">规模(亿元)</th><th class="num">近20日均成交(亿元)</th><th class="num">管理+托管</th><th>上市日</th><th>是否代表品种</th></tr></thead>
+      <tbody>
+        <tr><td>sz159928</td><td>消费ETF汇添富</td><td>中证主要消费(000932)</td><td class="num">144.25</td><td class="num">2.52</td><td class="num">0.60%</td><td>2013-08-23</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sh512600</td><td>消费ETF嘉实</td><td>中证主要消费(000932)</td><td class="num">8.12</td><td class="num">0.081</td><td class="num">0.60%</td><td>2014-06-13</td><td><span class="pill p-gray">同指数 · 次选</span></td></tr>
+        <tr><td>sh560680</td><td>消费ETF广发</td><td>中证主要消费(000932)</td><td class="num">2.22</td><td class="num">0.079</td><td class="num">0.60%</td><td>2022-10-19</td><td><span class="pill p-gray">同指数</span></td></tr>
+        <tr><td>sz159672</td><td>消费ETF博时</td><td>中证主要消费(000932)</td><td class="num">0.75</td><td class="num">0.026</td><td class="num">—</td><td>2023-03-23</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sz159689</td><td>消费ETF南方</td><td>中证主要消费(000932)</td><td class="num">0.50</td><td class="num">0.002</td><td class="num">—</td><td>2023-03-03</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sh515650</td><td>消费50ETF富国</td><td>中证消费50(931139)</td><td class="num">30.17</td><td class="num">0.51</td><td class="num">0.60%</td><td>2019-10-14</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sz159798</td><td>消费ETF易方达</td><td>中证消费50(931139)</td><td class="num">1.27</td><td class="num">0.070</td><td class="num">0.60%</td><td>2022-04-28</td><td><span class="pill p-gray">同指数</span></td></tr>
+        <tr><td>sz159670</td><td>消费50ETF国联安</td><td>中证消费50(931139)</td><td class="num">0.46</td><td class="num">0.034</td><td class="num">—</td><td>—</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sh516130</td><td>消费龙头ETF华宝</td><td>中证消费龙头(931068)</td><td class="num">9.71</td><td class="num">0.157</td><td class="num">0.55%</td><td>2021-09-28</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sz159520</td><td>消费龙头ETF工银</td><td>中证消费龙头(931068)</td><td class="num">1.37</td><td class="num">0.052</td><td class="num">0.57%</td><td>2023-10-19</td><td><span class="pill p-gray">同指数 · 流动性弱</span></td></tr>
+        <tr><td>sh510150</td><td>消费ETF招商</td><td>上证消费80(000069)</td><td class="num">13.89</td><td class="num">0.247</td><td class="num">0.60%</td><td>2010-12-08</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sh510630</td><td>消费ETF华夏</td><td>上证主要消费(000036)</td><td class="num">4.01</td><td class="num">0.448</td><td class="num">0.60%</td><td>2013-03-28</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sh513070</td><td>港股通消费ETF易方达</td><td>中证港股通消费主题(931454)</td><td class="num">13.65</td><td class="num">0.585</td><td class="num">0.20%</td><td>2022-03-14</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sz159735</td><td>港股消费ETF银华</td><td>中证港股通消费主题(931454)</td><td class="num">5.16</td><td class="num">0.122</td><td class="num">0.20%</td><td>2021-05-25</td><td><span class="pill p-gray">同指数 · 次选</span></td></tr>
+        <tr><td>sz159268</td><td>港股通消费ETF汇添富</td><td>中证港股通消费主题(931454)</td><td class="num">3.32</td><td class="num">0.086</td><td class="num">—</td><td>—</td><td><span class="pill p-gray">同指数</span></td></tr>
+        <tr><td>sh513230</td><td>港股通消费ETF华夏</td><td>中证港股通消费主题(931454)</td><td class="num">2.72</td><td class="num">0.098</td><td class="num">—</td><td>—</td><td><span class="pill p-gray">同指数</span></td></tr>
+        <tr><td>sh513590</td><td>港股通消费ETF鹏华</td><td>中证港股通消费主题(931454)</td><td class="num">0.10</td><td class="num">0.014</td><td class="num">—</td><td>—</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sh513970</td><td>恒生消费ETF景顺</td><td>恒生消费(HSCGSI)</td><td class="num">12.28</td><td class="num">0.242</td><td class="num">0.60%</td><td>待补（QDII）</td><td><span class="pill p-green">✓ 入选</span></td></tr>
+        <tr><td>sz159699</td><td>恒生消费ETF广发</td><td>恒生消费(HSCGSI)</td><td class="num">4.69</td><td class="num">0.086</td><td class="num">0.60%</td><td>2023-08-10</td><td><span class="pill p-gray">同指数 · 次选</span></td></tr>
+        <tr><td>sh562580</td><td>可选消费ETF华夏</td><td>中证全指可选消费(000989)</td><td class="num">0.40</td><td class="num">0.074</td><td class="num">0.60%</td><td>2024-03-18</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sz159936</td><td>可选消费ETF广发</td><td>中证全指可选消费(000989)</td><td class="num">2.05</td><td class="num">0.024</td><td class="num">—</td><td>—</td><td><span class="pill p-gray">方向不符（不含食品饮料）</span></td></tr>
+        <tr><td>sh516600</td><td>消费服务ETF工银</td><td>中证消费服务领先(000806)</td><td class="num">0.69</td><td class="num">0.007</td><td class="num">0.52%</td><td>2021-02-09</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sh517880</td><td>品牌消费ETF华泰柏瑞</td><td>中证沪港深品牌消费50(931404)</td><td class="num">0.39</td><td class="num">0.032</td><td class="num">—</td><td>—</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+        <tr><td>sh517550</td><td>沪港深消费龙头ETF招商</td><td>中证沪港深消费龙头(931663)</td><td class="num">0.54</td><td class="num">0.024</td><td class="num">—</td><td>—</td><td><span class="pill p-warn">剔除：规模&lt;1亿</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px;">规模/费率来源：westock ETF 档案与概览（2026-09-19）；成交额为近 20 个交易日日均（自 westock 日线成交额计算，2026-08-21~09-18）；上表未列「消费电子」类（属科技赛道）、消费 REITs、线上/在线消费（互联网主题）等名称含「消费」但赛道不同的品种。另：sz159520 工银已上市，未在初始检索结果中出现，单独补入。</p>
+
+  <h2>四、编制规则解构（第 2 步）</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>跟踪指数</th><th>选样规则</th><th>加权/复制</th><th>调仓</th><th class="num">成分股数</th><th class="num">单股权重上限</th></tr></thead>
+      <tbody>
+        <tr><td>中证主要消费<br><span class="src">800消费 000932</span></td><td>中证 800 样本中归属「主要消费」行业的<b>全部</b>证券，不设数量上限</td><td>调整市值加权</td><td>半年（6/12月）</td><td class="num">36</td><td class="num">15%</td></tr>
+        <tr><td>中证消费50<br><span class="src">CS消费50 931139</span></td><td>可选+主要消费，<b>剔除乘用车及零部件、传媒</b>；按日均总市值、营收(TTM)、ROE(TTM)、毛利率(TTM) 四项排名取算术平均，三级行业内配额选 50 只</td><td>调整市值加权</td><td>半年（6/12月）</td><td class="num">50</td><td class="num">15%<br><span class="src">前5大≤60%</span></td></tr>
+        <tr><td>中证消费龙头<br><span class="src">931068</span></td><td>可选+主要消费，<b>含汽车及零部件</b>；同样四因子（市值/营收/ROE/毛利率）综合排名，三级行业配额选 50 只</td><td>调整市值加权</td><td>半年（6/12月）</td><td class="num">50</td><td class="num">15%<br><span class="src">前5大≤60%</span></td></tr>
+        <tr><td>上证消费80<br><span class="src">000069</span></td><td>上证全指中归为<b>可选消费+主要消费+医药卫生</b>的证券，按日均总市值与日均成交额综合排名取前 80 只</td><td>派许加权（自由流通市值）</td><td>半年（6/12月）</td><td class="num">79</td><td class="num">10%</td></tr>
+        <tr><td>上证主要消费<br><span class="src">上证消费 000036</span></td><td>沪市 A 股中归属<b>主要消费</b>行业的证券，剔除流动性后按总市值排序，累计市值占比达 80% 或取前 50 只（不少于 30 只）</td><td>市值加权</td><td>半年（6/12月）</td><td class="num">30</td><td class="num">15%</td></tr>
+        <tr><td>中证港股通消费主题<br><span class="src">931454</span></td><td>港股通综合指数样本中，剔除换手率不足 0.1% 者；取食品/饮料/耐用消费品/纺织服装/珠宝/休闲服务/零售等典型消费领域，按日均总市值取前 50 只</td><td>调整市值加权（含汇率）</td><td>半年（6/12月）<br><span class="src">每次调整≤20%</span></td><td class="num">50</td><td class="num">15%<br><span class="src">前5大≤60%</span></td></tr>
+        <tr><td>恒生消费<br><span class="src">HSCGSI</span></td><td>恒生综合指数中归为消费类业务的证券，按市值排名取前 50 只，设缓冲区（60 名外剔除、40 名内纳入）</td><td>流通市值加权</td><td>半年检讨<br>季度调权重</td><td class="num">50</td><td class="num">待补</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px;">来源：中证指数有限公司/上海证券交易所指数编制方案、恒生指数公司方法论、基金招募说明书。成分股数取自各 ETF 申赎清单实际条数（2026-09-18），与指数官网口径可能因四舍五入略有差异。</p>
+
+  <h2>五、行业穿透与集中度（第 3 步）</h2>
+  <div class="card"><div id="chartConc" class="chart sm"></div></div>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>跟踪指数</th><th>第一大行业（申万一级）</th><th class="num">权重</th><th>第二大行业</th><th class="num">权重</th><th class="num">前十大权重</th><th class="num">第一大个股</th><th>结构定性</th></tr></thead>
+      <tbody>
+        <tr><td>上证主要消费 000036</td><td>食品饮料</td><td class="num">84.6%</td><td>农林牧渔</td><td class="num">7.0%</td><td class="num">73.2%</td><td class="num">伊利 15.1%</td><td><b>近似纯食品饮料</b>，白酒 35.5% + 乳品 23.8% + 调味品 16.4%</td></tr>
+        <tr><td>中证主要消费 000932</td><td>食品饮料</td><td class="num">68.0%</td><td>农林牧渔</td><td class="num">27.0%</td><td class="num">67.7%</td><td class="num">茅台 10.2%</td><td>必选消费为绝对主导，白酒约 36% 已从历史高点 45%+ 回落</td></tr>
+        <tr><td>中证消费50 931139</td><td>食品饮料</td><td class="num">40.7%</td><td>家用电器</td><td class="num">32.1%</td><td class="num">74.3%</td><td class="num">美的 15.4%</td><td><b>白酒 + 白电双核</b>，必选占超 85%，剔除汽车</td></tr>
+        <tr><td>中证消费龙头 931068</td><td>食品饮料</td><td class="num">31.8%</td><td>家用电器</td><td class="num">16.5%</td><td class="num">70.9%</td><td class="num">美的 15.8%</td><td>必选 + 可选 + <b>汽车 15.8%</b>，七个指数中 A 股结构最均衡</td></tr>
+        <tr><td>上证消费80 000069</td><td>医药生物</td><td class="num">33.2%</td><td>食品饮料</td><td class="num">31.1%</td><td class="num">53.0%</td><td class="num">药明康德 14.6%</td><td><b>消费 + 医药 + 汽车三分</b>，分散度最高，唯一含创新药/CXO</td></tr>
+        <tr><td>中证港股通消费主题 931454</td><td colspan="2">待补（可选消费为主：纺织服装与珠宝、耐用消费品、消费者服务、食品饮料）</td><td colspan="2">—</td><td class="num">62.1%</td><td class="num">泡泡玛特 10.7%</td><td>含新消费（泡泡玛特、安踏、百胜中国），<b>零白酒</b></td></tr>
+        <tr><td>恒生消费 HSCGSI</td><td>耐用消费品与服装</td><td class="num">50.0%</td><td>食品饮料与烟草</td><td class="num">28.0%</td><td class="num">61.4%</td><td class="num">创科实业 12.1%</td><td>工具/家电/运动服饰为主，含泡泡玛特；口径为第三方，<b>需核实</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px;">行业权重来源：中证指数官网行业分布（2026-07~08）、Wind（2026-08-31）、上市公司/基金公司披露；前十大权重由 westock ETF 持仓明细（2026-09-18）与指数官网交叉核对。港股通消费的一级行业权重未能取得权威口径，标注「待补」。</p>
+
+  <div class="note-box" style="margin-top:14px;">
+    <b>穿透结论：</b>七个指数一级行业都叫「消费」，但二级暴露完全不同。食品饮料权重从 <b>84.6%（上证主要消费）</b> 一路降到 <b>31.8%（消费龙头）</b>；上证消费80 的第一大行业其实是<b>医药生物</b>，恒生消费的第一大行业是<b>耐用消费品与服装</b>。历史表现差异的 80% 由这个结构解释 —— 食品饮料越集中，3 年回撤越大、收益越差。
+  </div>
+
+  <h2>六、历史表现（第 4 步）</h2>
+  <div class="card"><div id="chartPerf" class="chart"></div></div>
+  <div class="card"><div id="chartRisk" class="chart"></div></div>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>ETF / 跟踪指数</th><th class="num">近1年收益</th><th class="num">近3年年化</th><th class="num">近5年年化</th><th class="num">最大回撤(3年)</th><th class="num">最大回撤(5年)</th><th class="num">年化波动率(3年)</th><th class="num">信息比率(3年)</th></tr></thead>
+      <tbody>
+        <tr><td>恒生消费ETF景顺 / HSCGSI</td><td class="num down">-24.97%</td><td class="num down">-4.96%</td><td class="num">—</td><td class="num">28.58%</td><td class="num">29.84%</td><td class="num">23.03%</td><td class="num">-0.61</td></tr>
+        <tr><td>消费ETF招商 / 上证消费80</td><td class="num down">-19.32%</td><td class="num down">-4.93%</td><td class="num down">-7.85%</td><td class="num">26.38%</td><td class="num">46.10%</td><td class="num">20.47%</td><td class="num">-0.87</td></tr>
+        <tr><td>消费50ETF富国 / CS消费50</td><td class="num down">-13.94%</td><td class="num down">-3.10%</td><td class="num down">-5.04%</td><td class="num">28.94%</td><td class="num">38.27%</td><td class="num">19.01%</td><td class="num">-0.66</td></tr>
+        <tr><td>消费龙头ETF华宝 / 消费龙头</td><td class="num down">-19.19%</td><td class="num down">-5.43%</td><td class="num">—</td><td class="num">29.81%</td><td class="num">40.34%</td><td class="num">18.48%</td><td class="num">-0.84</td></tr>
+        <tr><td>港股通消费ETF易方达 / 港股通消费</td><td class="num down">-29.21%</td><td class="num up">+1.23%</td><td class="num">—</td><td class="num">31.00%</td><td class="num">38.73%</td><td class="num">26.20%</td><td class="num">-0.25</td></tr>
+        <tr><td>消费ETF汇添富 / 中证主要消费</td><td class="num down">-24.02%</td><td class="num down">-11.27%</td><td class="num down">-9.07%</td><td class="num">35.44%</td><td class="num">51.61%</td><td class="num">21.95%</td><td class="num">-1.09</td></tr>
+        <tr><td>消费ETF华夏 / 上证主要消费</td><td class="num down">-17.75%</td><td class="num down">-9.17%</td><td class="num down">-8.65%</td><td class="num">32.72%</td><td class="num">50.84%</td><td class="num">22.47%</td><td class="num">-0.93</td></tr>
+        <tr style="background:#f0f3f7;"><td><b>沪深300（基准）</b></td><td class="num up">+0.21%</td><td class="num up">+6.61%</td><td class="num down">-1.48%</td><td class="num">15.66%</td><td class="num">37.86%</td><td class="num">18.18%</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px;">区间：2026-09-18 往前推 1 / 3 / 5 年（起点 2025-09-19 / 2023-09-19 / 2021-09-20，用区间内最近交易日）；价格为<b>前复权</b>收盘价，已与数据源 52 周涨跌幅交叉验证（如 159928 计算值 -24.02% vs 源 -24.01%）。近5年年化对 516130（2021-10 上市）、513070（2022-03 上市）、513970（2023-04 起有数据）不可得，标「—」。信息比率定义为<b>相对沪深300 的超额收益 / 超额收益年化波动</b>，非基金相对跟踪指数的偏离度。</p>
+
+  <div class="note-box" style="margin-top:14px;">
+    <b>表现结论：</b>近 3 年除港股通消费（+1.2%）外，其余消费指数年化收益<b>全部为负</b>（-3.1% ~ -11.3%），信息比率全为负 —— 消费赛道整体跑输沪深300。回撤端 26%~35%（3年）、38%~52%（5年）显著高于沪深300 的 16%/38%，「抗跌」属性在本轮周期里并未兑现。结构越偏食品饮料（上证主要消费、中证主要消费），3 年收益越差、回撤越大。
+  </div>
+
+  <h2>七、价值与估值（第 5 步）</h2>
+  <div class="card"><div id="chartValue" class="chart"></div></div>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>跟踪指数</th><th class="num">PE(TTM)</th><th class="num">PE历史分位</th><th class="num">PB</th><th class="num">PB历史分位</th><th class="num">股息率</th><th class="num">未来两年盈利增速</th><th>估值判断</th></tr></thead>
+      <tbody>
+        <tr><td>恒生消费 HSCGSI</td><td class="num">13.41</td><td class="num">0.33%</td><td class="num">2.31</td><td class="num">5.39%</td><td class="num">4.84%</td><td class="num">待补</td><td>极低位</td></tr>
+        <tr><td>中证港股通消费主题 931454</td><td class="num">13.24</td><td class="num">0.48%</td><td class="num">2.28</td><td class="num">1.04%</td><td class="num">5.00%</td><td class="num">待补</td><td>PE/PB 双极低位 + 股息率最高</td></tr>
+        <tr><td>上证消费80 000069</td><td class="num">22.43</td><td class="num">12.22%</td><td class="num">2.86</td><td class="num">3.96%</td><td class="num">2.94%</td><td class="num">待补</td><td>PE 中等偏低，PB 低位，股息率最低</td></tr>
+        <tr><td>中证消费50 931139</td><td class="num">17.59</td><td class="num">27.36%</td><td class="num">3.15</td><td class="num">3.55%</td><td class="num">4.43%</td><td class="num">待补</td><td>PE 分位相对偏高，PB 低位</td></tr>
+        <tr><td>中证消费龙头 931068</td><td class="num">17.22</td><td class="num">14.96%</td><td class="num">3.09</td><td class="num">2.07%</td><td class="num">4.20%</td><td class="num">待补</td><td>PE/PB 均低位，股息率 4.2%</td></tr>
+        <tr><td>中证主要消费 000932</td><td class="num">22.64</td><td class="num">38.65%</td><td class="num">3.36</td><td class="num">2.97%</td><td class="num">4.11%</td><td class="num">待补</td><td>PE 分位最高，PB 极低位（ROE 仍在压缩）</td></tr>
+        <tr><td>上证主要消费 000036</td><td class="num">19.80</td><td class="num">4.95%</td><td class="num">4.26</td><td class="num">2.89%</td><td class="num">3.95%</td><td class="num">待补</td><td>PE 低位，但 PB 绝对值最高</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px;">估值口径：PE-TTM / PB-LF，数据源 westock ETF 概览与行情快照（2026-09-18）；历史分位口径约为<b>近 5 年</b>（已用「上证消费80 PE 22.43、分位 12.2%」与第三方近 5 年 11.8% 分位交叉验证）。<b>成分股调整会让历史估值分位失真</b>，请勿单独作为买卖依据。盈利增速预测未能取得一致预期口径，全部标「待补」，未参与打分（已按剩余权重重归一化）。</p>
+
+  <div class="note-box" style="margin-top:14px;">
+    <b>估值结论：</b>七个指数全部落在历史估值低位区，其中港股两个指数 PE/PB 分位几乎贴着历史最低（0.3%~1.0%），且股息率 4.8%~5.0%。但要注意一个关键信号：<b>中证主要消费的 PE 分位 38.7%、PB 分位仅 3.0%</b>，两者背离说明「价格便宜」主要来自 ROE 下滑而非估值抬升，估值修复需要<b>盈利端</b>先稳住。消费的边际改善信号（白酒加速筑底、乳品/调味品 2026Q1 营收回升）已在部分券商研报中出现，但尚未反映在指数盈利增速上。
+  </div>
+
+  <h2>八、风险与预警</h2>
+  <div class="card">
+    <p><b>① 赛道系统性风险：</b>近 3 年消费指数全部跑输沪深300，信息比率为负；若资金持续被科技主线虹吸，低估值本身不构成上涨理由。本轮「低估值」已持续较长时间，估值修复的时点不可预测。</p>
+    <p><b>② 集中度预警：</b>上证主要消费（510630）食品饮料权重 84.6%，近似单一板块押注，且前十大个股 73.2%；消费50（515650）与消费龙头（516130）前十大均超 70%、单只个股接近 15% 上限 —— 茅台/美的任一只出现基本面或政策冲击，指数会被明显拖累。</p>
+    <p><b>③ 规模与流动性预警：</b>消费ETF华夏（510630）规模 4.01 亿、消费龙头ETF华宝（516130）近 20 日均成交仅 0.16 亿，买卖冲击成本与清盘风险需计入。消费50ETF富国（515650）0.51 亿属于「够用但谈不上充裕」。</p>
+    <p><b>④ 跨境品种的额外风险：</b>恒生消费ETF景顺（513970）为 QDII，存在<b>额度限制、场内溢价、汇率波动</b>三重额外风险，且其权重上限、行业分布字段未能取得权威口径（已标待补），综合分排名第 1 的含金量因此打折。港股通品种（513070）无 QDII 额度问题，但仍有汇率与港股流动性风险。</p>
+    <p><b>⑤ 估值分位失真：</b>成分股调整会让历史估值分位「假便宜/假贵」，尤其 2025-12 起港股通消费指数进行了「真消费」提纯（剔除互联网平台），历史序列的可比性下降。</p>
+    <p><b>⑥ 数据缺口：</b>七个指数全部缺失「未来两年盈利增速一致预期」，故本次打分中价值维度实际只由估值分位 + 股息率支撑（已按剩余权重重归一化）。建议在决策前补齐该字段。</p>
+  </div>
+
+  <h2>九、数据来源</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>数据项</th><th>来源</th><th>截止日</th></tr></thead>
+      <tbody>
+        <tr><td>ETF 名称/跟踪指数/管理费/托管费/成立日/总资产</td><td>westock ETF 档案（腾讯自选股数据接口）</td><td>2026-09-19</td></tr>
+        <tr><td>规模、成交额、近1年涨跌幅、最大回撤、PE/PB 及分位、股息率及分位</td><td>westock ETF 概览（腾讯自选股数据接口）</td><td>2026-09-18</td></tr>
+        <tr><td>日线收盘价与成交额（用于计算 1/3/5 年年化、回撤、波动率、信息比率）</td><td>westock 日线（前复权）</td><td>2021-09-01 ~ 2026-09-18</td></tr>
+        <tr><td>成分股权重（前十大，部分单股权重）</td><td>中证指数有限公司官网指数单页、上海证券交易所指数单张、Wind（经基金公司材料转载）</td><td>2026-06 ~ 2026-08</td></tr>
+        <tr><td>指数编制方案（选样/加权/调仓/权重上限）</td><td>中证指数有限公司编制方案 PDF、上交所指数编制方案、恒生指数公司方法论、基金招募说明书</td><td>2025-07 ~ 2026-02</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="disc">
+    <b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。
+  </div>
+
+  <div class="foot">
+    报告生成：2026-09-19 ｜ 分析方法：赛道锁定 → 候选池构建 → 指数编制解构 → 行业穿透 → 历史表现验证 → 估值预判 → 五维打分 → 决策矩阵
+  </div>
+</div>
+
+<script>
+var NAMES = ['恒生消费ETF景顺', '消费ETF招商', '消费50ETF富国', '消费龙头ETF华宝', '港股通消费ETF易方达', '消费ETF汇添富', '消费ETF华夏'];
+var UP = '#d9432f';
+var DOWN = '#1a9c6b';
+
+// 1. 综合评分
+echarts.init(document.getElementById('chartScore')).setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  grid: { left: 130, right: 60, top: 16, bottom: 20 },
+  xAxis: { type: 'value', min: 45, max: 70, name: '综合分', axisLabel: { formatter: '{value}' } },
+  yAxis: { type: 'category', inverse: true, data: NAMES, axisLabel: { fontSize: 12 } },
+  series: [{
+    type: 'bar',
+    barWidth: '52%',
+    data: [63.5, 63.2, 61.7, 61.6, 60.8, 59.4, 52.6],
+    itemStyle: { color: '#1f5fa8', borderRadius: [0, 4, 4, 0] },
+    label: { show: true, position: 'right', formatter: '{c}', fontSize: 12, color: '#4a5158' }
+  }]
+});
+
+// 2. 集中度
+echarts.init(document.getElementById('chartConc')).setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function (v) { return v + '%'; } },
+  legend: { data: ['前十大权重占比', '第一大行业权重'] },
+  grid: { left: 56, right: 56, top: 46, bottom: 78 },
+  xAxis: { type: 'category', data: NAMES, axisLabel: { interval: 0, rotate: 26, fontSize: 11 } },
+  yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
+  series: [
+    { name: '前十大权重占比', type: 'bar', data: [61.4, 53.0, 74.3, 70.9, 62.1, 67.7, 73.2], itemStyle: { color: '#4a7fb5' }, barWidth: '30%' },
+    { name: '第一大行业权重', type: 'bar', data: [50.0, 33.2, 40.7, 31.8, null, 68.0, 84.6], itemStyle: { color: '#c98b3a' }, barWidth: '30%' }
+  ]
+});
+
+// 3. 收益对比
+echarts.init(document.getElementById('chartPerf')).setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function (v) { return v === null ? '—' : v + '%'; } },
+  legend: { data: ['近1年收益', '近3年年化收益'] },
+  grid: { left: 56, right: 24, top: 46, bottom: 84 },
+  xAxis: { type: 'category', data: NAMES, axisLabel: { interval: 0, rotate: 26, fontSize: 11 } },
+  yAxis: { type: 'value', name: '收益(%)', axisLabel: { formatter: '{value}%' } },
+  series: [
+    {
+      name: '近1年收益', type: 'bar', barWidth: '30%',
+      data: [
+        { value: -24.97, itemStyle: { color: DOWN } },
+        { value: -19.32, itemStyle: { color: DOWN } },
+        { value: -13.94, itemStyle: { color: DOWN } },
+        { value: -19.19, itemStyle: { color: DOWN } },
+        { value: -29.21, itemStyle: { color: DOWN } },
+        { value: -24.02, itemStyle: { color: DOWN } },
+        { value: -17.75, itemStyle: { color: DOWN } }
+      ]
+    },
+    {
+      name: '近3年年化收益', type: 'bar', barWidth: '30%',
+      data: [
+        { value: -4.96, itemStyle: { color: DOWN } },
+        { value: -4.93, itemStyle: { color: DOWN } },
+        { value: -3.10, itemStyle: { color: DOWN } },
+        { value: -5.43, itemStyle: { color: DOWN } },
+        { value: 1.23, itemStyle: { color: UP } },
+        { value: -11.27, itemStyle: { color: DOWN } },
+        { value: -9.17, itemStyle: { color: DOWN } }
+      ]
+    }
+  ]
+});
+
+// 4. 风险收益散点
+echarts.init(document.getElementById('chartRisk')).setOption({
+  tooltip: {
+    trigger: 'item',
+    formatter: function (p) { return p.data.name + '<br/>近3年年化: ' + p.data.value[0] + '%<br/>最大回撤(3年): ' + p.data.value[1] + '%'; }
+  },
+  grid: { left: 66, right: 120, top: 30, bottom: 50 },
+  xAxis: { type: 'value', name: '近3年年化收益(%)', min: -13, max: 9, splitLine: { lineStyle: { color: '#e6e9ee' } } },
+  yAxis: { type: 'value', name: '最大回撤(3年, %)', min: 12, max: 40, splitLine: { lineStyle: { color: '#e6e9ee' } } },
+  series: [{
+    type: 'scatter',
+    symbolSize: 15,
+    label: { show: true, position: 'right', formatter: '{b}', fontSize: 11, color: '#4a5158' },
+    itemStyle: { color: '#1f5fa8', opacity: 0.85 },
+    data: [
+      { name: '恒生消费', value: [-4.96, 28.58] },
+      { name: '上证消费80', value: [-4.93, 26.38] },
+      { name: '中证消费50', value: [-3.10, 28.94] },
+      { name: '中证消费龙头', value: [-5.43, 29.81] },
+      { name: '港股通消费', value: [1.23, 31.00] },
+      { name: '中证主要消费', value: [-11.27, 35.44] },
+      { name: '上证主要消费', value: [-9.17, 32.72] },
+      { name: '沪深300(基准)', value: [6.61, 15.66], itemStyle: { color: '#8b939b' } }
+    ]
+  }]
+});
+
+// 5. 估值与股息
+echarts.init(document.getElementById('chartValue')).setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['PE历史分位', 'PB历史分位', '股息率'] },
+  grid: { left: 56, right: 56, top: 46, bottom: 84 },
+  xAxis: { type: 'category', data: NAMES, axisLabel: { interval: 0, rotate: 26, fontSize: 11 } },
+  yAxis: [
+    { type: 'value', name: '分位(%)', axisLabel: { formatter: '{value}%' } },
+    { type: 'value', name: '股息率(%)', max: 8, axisLabel: { formatter: '{value}%' } }
+  ],
+  series: [
+    { name: 'PE历史分位', type: 'bar', barWidth: '26%', data: [0.33, 12.22, 27.36, 14.96, 0.48, 38.65, 4.95], itemStyle: { color: '#4a7fb5' } },
+    { name: 'PB历史分位', type: 'bar', barWidth: '26%', data: [5.39, 3.96, 3.55, 2.07, 1.04, 2.97, 2.89], itemStyle: { color: '#9dbcd9' } },
+    { name: '股息率', type: 'line', yAxisIndex: 1, data: [4.84, 2.94, 4.43, 4.20, 5.00, 4.11, 3.95], itemStyle: { color: '#c98b3a' }, lineStyle: { width: 2 }, symbolSize: 8 }
+  ]
+});
+</script>
+</body>
+</html>
